@@ -12,6 +12,12 @@ Performing bulk inserts (350K) records in database ( MySql ) using Hibernate & p
 
 Yes it's a simple table which will store an ID & a word, sample data could be fetched from below Github URL
 
+https://github.com/dwyl/english-words
+
+My special thanks to the source provider as it helped me to complete my analysis
+
+**Copyright still belongs to the origianl source** 
+
 How am I doing bulk inserts ?
 
 1. Inserting records sequentially with Hibernate generated value for primary key
