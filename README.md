@@ -12,7 +12,7 @@ Performing bulk inserts (350K) records in database ( MySql ) using Hibernate & p
 
 Yes it's a simple table which will store an ID & a word, sample data could be fetched from below Github URL
 
-https://github.com/dwyl/english-words
+[https://github.com/dwyl/english-words]
 
 My special thanks to the source provider as it helped me to complete my analysis
 
@@ -32,7 +32,7 @@ How am I doing bulk inserts ?
 1. Hibernate **sequential** inserts with **auto generated** value for primary key  
    Time : 75.959  
    
-   ** Here it's important to note that for each value of primary key, hibernate issues a select query to retrieve unique from a sequence so it takes too much time as compared 	  to other tests.**  
+   	*Here it's important to note that for each value of primary key, hibernate issues a select query to retrieve unique from a sequence so it takes too much time as compared 	  	to other tests.*  
    
 2. Hibernate **sequential** inserts with program assigned value for primary key  
    Time : 13.802
