@@ -35,7 +35,7 @@ How am I doing bulk inserts ?
    3a. Hibernate **batch** insert(50) and program assigned value for primary key and **rewriteBatchedStatements=false**  
    Time : 40.27
    
-   3b. Hibernate **sequential** inserts with program assigned value for primary key and **rewriteBatchedStatements=false**
+   3b. Hibernate **sequential** inserts with program assigned value for primary key and **rewriteBatchedStatements=false**  
    Time : 41.581
 
 
@@ -44,7 +44,7 @@ How am I doing bulk inserts ?
 With plain JDBC	
 	
 4. Plain JDBC **sequential** inserts with program assigned value for primary key and with **rewriteBatchedStatements=false**
-   Total time : 35.922
+   Total time : 35.806
 
 5. Plain JDBC **batch** insert(50) with rewriteBatchedStatements=true
    Total time : 6.467	
@@ -55,12 +55,14 @@ With plain JDBC
    
 ** Analysis**
 
-1. Comparing 3b & 4, performing sequential inserts operation by **JDBC API** takes around 5.5 seconds less  
-2  Comparing 3 & 5, performing batch inserts operation by **JDBC API** takes around 4.35 seconds less
+In all the cases JDBC's performance is better than using Hibernate ( only for bulk inserts, sequentially or batch )
 
-I don't say that Hibernate is poor or have less performance as compared to using plain JDBC API for performing bulk inserts but Hibernate do have some overhead. 
+1. Comparing 3b & 4, performing sequential inserts operation by **JDBC API** takes less time around 5.775 seconds less  
+2  Comparing 3 & 5, performing batch inserts operation by **JDBC API** also takes less time around 4.35 seconds less
 
-My affinity for Hibernate will always be there. 
+Here, I am not concluding that that Hibernate is poor or have less performance as compared to using plain JDBC API for performing bulk inserts but Hibernate do have some overhead. 
+
+My affinity for Hibernate will always be there and shall always use hibernate. 
 
 
    
