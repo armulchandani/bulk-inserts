@@ -61,7 +61,7 @@ With plain JDBC
 **With 'rewriteBatchedStatements=true' ,the JDBC will pack as many queries as possible into a single network packet, lowering this way the network overhead.**   
    
    
-** Analysis**
+**Analysis**
 
 In all the cases JDBC's performance is better than using Hibernate ( only for bulk inserts, sequentially or batch )
 
