@@ -6,6 +6,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * A simple model class mapping to 'words' table inside database and telling
+ * hibernate to assign the value for the primary key
+ * 
+ * @author anubhav
+ *
+ */
 @Entity
 @Table
 public class Words {

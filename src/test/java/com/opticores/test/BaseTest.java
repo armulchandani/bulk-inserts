@@ -5,6 +5,11 @@ import org.junit.BeforeClass;
 import com.opticores.util.HibernateUtil;
 
 
+/** A base test class to initialize hibernate
+ * 
+ * @author anubhav
+ *
+ */
 public class BaseTest {
 	
 		
