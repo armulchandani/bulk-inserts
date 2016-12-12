@@ -30,7 +30,9 @@ How am I doing bulk inserts ?
 > With MySql:
 
 1. Hibernate **sequential** inserts with **auto generated** value for primary key  
-   Time : 75.959
+   Time : 75.959  
+   
+   ** Here it's important to note that for each value of primary key, hibernate issues a select query to retrieve unique from a sequence so it takes too much time as compared 	  to other tests.**  
    
 2. Hibernate **sequential** inserts with program assigned value for primary key  
    Time : 13.802
@@ -52,7 +54,7 @@ With plain JDBC
 4. Plain JDBC **sequential** inserts with program assigned value for primary key and with **rewriteBatchedStatements=false**
    Total time : 35.806
 
-5. Plain JDBC **batch** insert(50) with rewriteBatchedStatements=true
+5. Plain JDBC **batch** insert(50) with **rewriteBatchedStatements=true**
    Total time : 6.467	
 
 
