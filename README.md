@@ -32,7 +32,7 @@ How am I doing bulk inserts ?
 1. Hibernate **sequential** inserts with **auto generated** value for primary key  
    Time : 75.959  
    
-   	*Here it's important to note that for each value of primary key, hibernate issues a select query to retrieve unique from a sequence so it takes too much time as compared 	  	to other tests.*  
+   	*Here it's important to note that for each value of primary key, hibernate issues a select query to retrieve unique value from a sequence so it takes too much time as    compared to other tests.*  
    
 2. Hibernate **sequential** inserts with program assigned value for primary key  
    Time : 13.802
