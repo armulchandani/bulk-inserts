@@ -19,24 +19,28 @@ How am I doing bulk inserts ?
 3. Performing a batch inserts(50) with Hibernate but programmatically generated value for primary key
 4. Plain JDBC batch insert(50) with programmatically generated primary id
 
-With MySql:
+> With MySql:
 
 1. Hibernate sequential inserts with Hibernate generated value for primary key
-   Total time : 84.044
+   Time : 84.044
 2. Hibernate sequential inserts with programmatically generated value for primary key
-   Total time : 41.926
+   Time : 41.926
 3. Hibernate batch insert(50) & programmatically generated primary id
-   Total time : 42.635
-3a. Hibernate batch insert(50) and programmatically generated value for primary key and rewriteBatchedStatements=true
-	Total time : 12.471
+   Time : 42.635
+   
+   3a. Hibernate batch insert(50) and programmatically generated value for primary key and rewriteBatchedStatements=true
+   Time : 12.471
 4. Hibernate batch insert(1000) and programmatically generated value for primary key and with rewriteBatchedStatements=false
    Total time : 44.112
 4a. Hibernate batch insert(1000) with programmatically generated value for primary id and rewriteBatchedStatements=true
    Total time : 9.482
 
-** rewriteBatchedStatements=true the JDBC will pack as many queries as possible into a single network packet, lowering this way the network overhead.
+**rewriteBatchedStatements=true the JDBC will pack as many queries as possible into a single network packet, lowering this way the network overhead.**
 
-5. Plain JDBC batch inserts(1000) with programmatically generated value for primary key and with rewriteBatchedStatements=false
+> With plain JDBC API
+
+1. Plain JDBC batch inserts(1000) with programmatically generated value for primary key and with rewriteBatchedStatements=false
    Total time : 37.492
-   5a. Plain JDBC batch insert(1000) with programmatically generated value for primary key and with rewriteBatchedStatements=true
+   
+   1a. Plain JDBC batch insert(1000) with programmatically generated value for primary key and with rewriteBatchedStatements=true
    Total time : 5.522	
