@@ -19,28 +19,50 @@ How am I doing bulk inserts ?
 3. Performing a batch inserts(50) with Hibernate but programmatically generated value for primary key
 4. Plain JDBC batch insert(50) with programmatically generated primary id
 
+**Test Results:**
+
 > With MySql:
 
-1. Hibernate sequential inserts with Hibernate generated value for primary key
-   Time : 84.044
-2. Hibernate sequential inserts with programmatically generated value for primary key
-   Time : 41.926
-3. Hibernate batch insert(50) & programmatically generated primary id
-   Time : 42.635
+1. Hibernate **sequential** inserts with **auto generated** value for primary key  
+   Time : 75.959
    
-   3a. Hibernate batch insert(50) and programmatically generated value for primary key and rewriteBatchedStatements=true
-   Time : 12.471
-4. Hibernate batch insert(1000) and programmatically generated value for primary key and with rewriteBatchedStatements=false
-   Total time : 44.112
-4a. Hibernate batch insert(1000) with programmatically generated value for primary id and rewriteBatchedStatements=true
-   Total time : 9.482
+2. Hibernate **sequential** inserts with program assigned value for primary key  
+   Time : 13.802
+   
+3. Hibernate **batch** insert(50) & program assigned primary id  
+   Time : 10.822
+   
+   3a. Hibernate **batch** insert(50) and program assigned value for primary key and **rewriteBatchedStatements=false**  
+   Time : 40.27
+   
+   3b. Hibernate **sequential** inserts with program assigned value for primary key and **rewriteBatchedStatements=false**
+   Time : 41.581
 
-**rewriteBatchedStatements=true the JDBC will pack as many queries as possible into a single network packet, lowering this way the network overhead.**
 
 > With plain JDBC API
 
-1. Plain JDBC batch inserts(1000) with programmatically generated value for primary key and with rewriteBatchedStatements=false
-   Total time : 37.492
+With plain JDBC	
+	
+4. Plain JDBC **sequential** inserts with program assigned value for primary key and with **rewriteBatchedStatements=false**
+   Total time : 35.922
+
+5. Plain JDBC **batch** insert(50) with rewriteBatchedStatements=true
+   Total time : 6.467	
+
+
+**With 'rewriteBatchedStatements=true' ,the JDBC will pack as many queries as possible into a single network packet, lowering this way the network overhead.**   
    
-   1a. Plain JDBC batch insert(1000) with programmatically generated value for primary key and with rewriteBatchedStatements=true
-   Total time : 5.522	
+   
+** Analysis**
+
+1. Comparing 3b & 4, performing sequential inserts operation by **JDBC API** takes around 5.5 seconds less  
+2  Comparing 3 & 5, performing batch inserts operation by **JDBC API** takes around 4.35 seconds less
+
+I don't say that Hibernate is poor or have less performance as compared to using plain JDBC API for performing bulk inserts but Hibernate do have some overhead. 
+
+My affinity for Hibernate will always be there. 
+
+
+   
+   
+   
