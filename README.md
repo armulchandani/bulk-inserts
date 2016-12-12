@@ -7,7 +7,7 @@ This simple project analyze the performance of bulk insert operations using Hibe
 ###### Hardware: 
 *Windows 7, Intel i3 processor with 4 cores and 8 GB RAM*
 
-What am I doing ?
+What am I doing ?  
 Performing bulk inserts (350K) records in database ( MySql ) using Hibernate & plain JDBC API. Table in which the data is to be inserted is small table with only 2 columns:ID, WORD
 
 Yes it's a simple table which will store an ID & a word, sample data could be fetched from below Github URL
